@@ -2,6 +2,10 @@
 
 
 let questions = [
+  {q: "漢字一文字で、木へんに「春」は椿ですが、木へんに「冬」は何でしょう。", a: "柊"},
+  {q: "その性格が、「鳴かぬなら　鳴くまで待とう　ほととぎす」と表現される日本の戦国武将は誰でしょう。", a: "徳川家康"},
+  {q: "平方数と立法数に挟まれた唯一の数字は何でしょう。", a: "２６"},
+  {q: "ギリシャ語で「火星に対抗するもの」という意味の言葉が語源である、さそり座のα星は何でしょう。", a: "アンタレス"},
   {q: "「力のあるものが、機会をじっと窺っている様子」のことを、「虎」という漢字を使った四字熟語で何というでしょう。", a: "虎視眈々"},
   {q: "第二次世界大戦中に空襲の標的にならないために黒い布で覆われていたという歴史がある、兵庫県姫路市の世界遺産は何でしょう。", a: "姫路城"},
   {q: "途切れることなく次から次へと話し続けることを、大量の銃弾を自動で発射し続ける武器の名前から「何トーク」というでしょう。", a: "マシンガン"},
@@ -94,7 +98,7 @@ function draw() {
   textSize(20);
   fill(180);
   textAlign(RIGHT, BOTTOM);
-  text("spaceで解答  Enterで解答送信  その後Enterで次の問題", width - 20, height - 10);
+  text("spaceで解答  Enterで解答送信  その後Enterで次の問題　解答は全角で", width - 20, height - 10);
   pop();
 
   
@@ -109,7 +113,7 @@ function showAnswerInput() {
 
 
 function checkAnswer() {
-  const user = answerInput.value().trim();
+  const user = answerInput.value().trim();　//空白部分の削除
   const correct = questions[qIndex].a.trim();
   if (user === "") {
     resultText = "答えを入力してください。";
